@@ -145,6 +145,16 @@ impl Image {
         image_defaults!(PNG, height)
     }
 
+    pub fn png_with(height: u32, rotation: Rotation, xdim: u32, foreground: Color, background: Color) -> Image {
+        Image::PNG {
+            height,
+            xdim,
+            rotation,
+            foreground,
+            background,
+        }
+    }
+
     /// Returns a new JPEG with default values.
     pub fn jpeg(height: u32) -> Image {
         image_defaults!(JPEG, height)
